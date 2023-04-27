@@ -19,12 +19,14 @@ function bash-ctrl-d() {
   fi
 }
 
+function open {
+    "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe" "$@"
+}
 zle -N bash-ctrl-d
 bindkey "^d" bash-ctrl-d
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/src
 export PS1="%~ $ "
-alias chrome="open -a 'Google Chrome'"
 alias g='cd ~/github'
 alias h='cd ~/github/holo-app'
 alias f='go fmt'
@@ -51,15 +53,8 @@ alias gbs="git show-branch | grep '*' | grep -v '$(git rev-parse --abbrev-ref HE
 alias gcp='git cherry-pick'
 alias k='cd ~/github/knowledge-band-admin'
 alias lama='lama-cleaner --model=lama --device=cpu --port=8080'
-alias l13='open http://localhost:1337'
-alias l3='open http://localhost:3000'
-alias l31='open http://localhost:3001'
-alias l32='open http://localhost:3002'
-alias l5='open http://localhost:5000'
-alias l51='open http://localhost:5001'
-alias l8='open http://localhost:8000'
-alias l81='open http://localhost:8001'
-alias l80='open http://localhost:8080'
+alias l3="open http://localhost:3000"
+alias l31="open http://localhost:3001"
 alias n='nvim'
 alias ns='npm start'
 alias nd='npm run dev'
@@ -92,11 +87,6 @@ alias gsb="git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HE
 alias tailwind="yarn add -D tailwindcss postcss autoprefixer"
 alias tailwind-init="yarn tailwindcss init -p"
 export PATH="/usr/local/sbin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 alias gh="~/bin/hub_browse.sh"
 alias mnt="cd /mnt/c/Users/etern"
