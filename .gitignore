@@ -13,7 +13,6 @@
 .nvm/
 .profile
 .sudo_as_admin_successful
-.tmux.conf
 .vim/
 .viminfo
 .yarnrc
@@ -27,3 +26,5 @@ github/
 bin/
 node_modules/
 .gitconfig
+.ssh/
+tools/
