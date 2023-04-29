@@ -19,6 +19,11 @@ function bash-ctrl-d() {
   fi
 }
 
+# Start SSH agent only if not already running
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)"
+fi
+
 function open {
     "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe" "$@"
 }
@@ -90,3 +95,4 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 alias gh="~/bin/hub_browse.sh"
 alias mnt="cd /mnt/c/Users/etern"
+alias dos="dos2unix example.txt"
